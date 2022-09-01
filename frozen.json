@@ -1,0 +1,178 @@
+{
+  "version":[
+    {
+      "os": "Windows",
+      "version": "v2.0.42",
+      "link": "https://github.com/Frozen-Software-LLC/FrozenReleases2.0/releases/tag/v2.0.42"
+    },
+    {
+      "os": "macOS",
+      "version": "v2.0.26",
+      "link": "https://github.com/Frozen-Software-LLC/FrozenReleases2.0/releases/tag/v2.0.26"
+    }
+  ],
+  "list_errors":[
+    {
+      "name": "Error checking out, code 200",
+      "id": 1,
+      "common": "Common",
+      "type": "Normal",
+      "solution": "Not an error, just means clip coupon was OOS. ignore the \"error.\" Let the bot run",
+      "note": "If your error webhook is purple error can be ignored. If your error webhook is red on a ping, do a fake ping, if that webhook is still red, then look at troubleshooting by re-logging, swapping proxies, and/or resting",
+      "color": "discord.Color.purple()"
+    },
+    {
+      "name": "Failed to claim coupon [object Object]",
+      "id": 2,
+      "common": "Common",
+      "type": "Normal",
+      "solution": "Not an actual error, just ignore the 'error' and let the bot run",
+      "note": "If your error webhook is purple error can be ignored. If your error webhook is red on a ping, do a fake ping, if that webhook is still red, then look at troubleshooting by re-logging, swapping proxies, and/or resting",
+      "color": "discord.Color.purple()"
+    },
+    {
+      "name": "Price not met",
+      "id": 3,
+      "common": "Common",
+      "type": "Normal",
+      "solution": "Not an error, just ignore the \"error.\" Let the bot run",
+      "note": "Most of these \"errors\" can be ignored if your error webhook is purple. If your error webhook is red on a ping, do a fake ping, if that webhook is still red, then look at troubleshooting by re-logging/swapping proxies/resting.",
+      "color": "discord.Color.purple()"
+    },
+    {
+      "name": "Could not clip coupon",
+      "id": 4,
+      "common": "Common",
+      "type": "Normal",
+      "solution": "Not an error, just means clip coupon was OOS. ignore the \"error.\" Let the bot run.",
+      "note": "Most of these “errors” can be ignored if your error webhook is purple. If your error webhook is red on a ping, do a fake ping, if that webhook is still red, then look at troubleshooting by re-logging/swapping proxies/resting.",
+      "color": "discord.Color.purple()"
+    },
+    {
+      "name": "Task engine crashed, TypeError: Cannot read properties of undefined (reading 'specialItem')",
+      "id": 5,
+      "common": "Common",
+      "type": "Normal",
+      "solution": "Not an error, just ignore it. This happens on lightning deals which the bot temporarily doesn't support due to them being uncommon. Let the bot run.",
+      "note": "Most of these “errors” can be ignored if your error webhook is purple. If your error webhook is red on a ping, do a fake ping, if that webhook is still red, then look at troubleshooting by re-logging/swapping proxies/resting.",
+      "color": "discord.Color.purple()"
+    },
+    {
+      "name": "ERR Claiming Promo addPromo_InvalidForPurchase",
+      "id": 6,
+      "common": "Common",
+      "type": "Normal",
+      "solution": "Not an error, just means promo code was invalid. ignore the \"error.\" Let the bot run.",
+      "note": "Most of these “errors” can be ignored if your error webhook is purple. If your error webhook is red on a ping, do a fake ping, if that webhook is still red, then look at troubleshooting by re-logging/swapping proxies/resting.",
+      "color": "discord.Color.purple()"
+    },
+    {
+      "name": "403/503 block from Amazon",
+      "id": [403,503],
+      "common": "Common",
+      "type": "Normal",
+      "solution": "This can happen during times of high load, and shouldn't be worried about unless it happens on a fake ping. Do a fake ping. If it works,/ let the bot run. If fake ping doesn't work, rest for a few hours.",
+      "note": "If your error webhook is purple error can be ignored. If your error webhook is red on a ping, do a fake ping, if that webhook is still red, then look at troubleshooting by re-logging, swapping proxies, and/or resting.",
+      "color": "discord.Color.purple()"
+    },
+    {
+      "name": "Bad Amazon Profile. This is user error",
+      "id": 7,
+      "common": "Common",
+      "type": "Normal",
+      "solution": "Remove account(s), restart bot and then add and login to account. **ALSO** Check payment method, make sure 1 click is turned on.",
+      "note": "If your error webhook is purple error can be ignored. If your error webhook is red on a ping, do a fake ping, if that webhook is still red, then look at troubleshooting by re-logging, swapping proxies, and/or resting.",
+      "color": "discord.Color.purple()"
+    },
+    {
+      "name": ["Outage/Bot is Disconnected or not connected"],
+      "id": 8,
+      "common": "Common",
+      "type": "Normal",
+      "solution": "Make sure you are using the latest version, if so restart your bots. If the app/bot keeps saying \"Disconnected\" check Status (channel)",
+      "note": "If your error webhook is purple error can be ignored. If your error webhook is red on a ping, do a fake ping, if that webhook is still red, then look at troubleshooting by re-logging, swapping proxies, and/or resting.",
+      "color": "discord.Color.purple()"
+    },
+    {
+      "name": "Amazon \"OOS\" Softblock?",
+      "id": 9,
+      "common": "Common",
+      "type": "Warning",
+      "solution": "This can happen during times of high load, and shouldn't be worried about unless it happens on a fake ping. Do a fake ping. If it works, let the bot run. If fake ping doesn't work, rest for a few hours.",
+      "note": "If you still get the error after multiple fake ping, please make a ticket.",
+      "color": "discord.Color.orange()"
+    },
+    {
+      "name": "Failed to add to cart, OOS 302",
+      "id": 302,
+      "common": "Common",
+      "type": "Warning",
+      "solution": "Item is OOS (Out Of Stock)",
+      "note": "If you still get the error after multiple fake ping, please make a ticket.",
+      "color": "discord.Color.orange()"
+    },
+    {
+      "name": ["Haven't hit any freebie","No freebies in a while"],
+      "id": 11,
+      "common": "Common",
+      "type": "Warning",
+      "solution": "Please make a ticker.",
+      "note": "Remember we want to help you out, and ensure everyone hits, do not hesitate and just make a ticket.",
+      "color": "discord.Color.orange()"
+    },
+    {
+      "name": "Error executing request. Possibly proxy/network error",
+      "id": 12,
+      "common": "Common",
+      "type": "Warning",
+      "solution": "This can happen during times of high load, and shouldn't be worried about unless it happens on a fake ping. Do a fake ping. If it works, let the bot run. If fake ping doesn't work, rest for a few hours.",
+      "note": "If you still get the error after multiple fake ping, please make a ticket.",
+      "color": "discord.Color.orange()"
+    },
+    {
+      "name": "SyntaxError: $ < in JSON at position 0",
+      "id": 13,
+      "common": "Unusual",
+      "type": "Normal",
+      "solution": "Uninstall the bot, then install the latest build. If it doesn't work report it to #bug-report.",
+      "note": "If you still get the error after multiple fake ping, please make a ticket.",
+      "color": "discord.Color.orange()"
+    },
+    {
+      "name": "[Windows pop-up] JavaScript error occured in the main process",
+      "id": 15,
+      "common": "Unusual",
+      "type": "Breaking",
+      "solution": "Follow these instrunctions.\nhttps://stackoverflow.com/questions/57750620/how-to-fix-error-spawnsync-powershell-exe-enoent",
+      "note": "Remember we want to help you out, do not hesitate and just make a ticket.",
+      "color": "discord.Color.red()"
+    },
+    {
+      "name": "Getting captchas/captchas with proxies",
+      "id": 16,
+      "common": "Unusual",
+      "type": "Breaking",
+      "solution": "Check the channel '#switch-to-2fa' is the way to fix getting captchas",
+      "note": "Remember we want to help you out, do not hesitate and just make a ticket.",
+      "color": "discord.Color.red()"
+    },
+    {
+      "name": "Localhost IP getting blocked/Have proxies but it says blocked Localhost IP",
+      "id": 17,
+      "common": "Unusual",
+      "type": "Breaking",
+      "solution": "Get proxies, in case you have a list of proxies delete the list, restart your bot, and finally add the proxies one more time and let it run. If you still get the error report it report to #bug-report",
+      "note": "Remember we want to help you out, do not hesitate and just make a ticket.",
+      "color": "discord.Color.red()"
+    },
+    {
+      "name": "White user interface (UI) white screen",
+      "id": 18,
+      "common": "Unusual",
+      "type": "Breaking",
+      "solution": "Make sure you are using the latest version, if so restart your bots. If the app/bot keeps displaying the white screen report it report to #bug-report.",
+      "note": "Remember we want to help you out, do not hesitate and just make a ticket.",
+      "color": "discord.Color.red()"
+    }
+  ]
+}
