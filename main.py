@@ -2,25 +2,20 @@ import os
 import json
 import discord
 import datetime 
+from os import getenv
 from discord import app_commands
-from up_time_robot import alive  #KEEP BOT ALIVE
-
-my_secret = os.environ['TOKEN']
-MY_GUILD = discord.Object(id=986486394627182602)
 
 with open("errors.json","r") as f:
   errors = json.load(f)
   
-# <-------------------------------------------------------------------------------------------------------------------->
-
 class MyClient(discord.Client):
     def __init__(self, *, intents: discord.Intents):
         super().__init__(intents=intents)
         self.tree = app_commands.CommandTree(self)
 
     async def setup_hook(self):
-        self.tree.copy_global_to(guild=MY_GUILD)
-        await self.tree.sync(guild=MY_GUILD)
+        self.tree.copy_global_to(guild=discord.Object(id=MY_GUILD))
+        await self.tree.sync(guild=discord.Object(id=MY_GUILD))
       
 intents = discord.Intents.default()
 client = MyClient(intents=intents)
@@ -30,8 +25,8 @@ async def on_ready():
     print(f'Logged in as {client.user}')
     print('------------------------------')
   
-    # <--------------------------------------------------------------------------------------------->
-
+  
+  
 @client.tree.command(name = 'error_name', description = 'Search the error by its name to get a possible solution')
 async def error_name(interaction: discord.Interaction, error: str):
   for list in errors['list_errors']:
@@ -179,6 +174,4 @@ async def partners(interaction: discord.Interaction):
   emb.set_footer(text='Frozen Freebies Partners')
   await interaction.response.send_message(embed=emb)
   
-# <-------------------------------------------------------------------------------------------------------------------->
-alive()  #KEEP BOT ALIVE
-client.run(my_secret)  #SECRET TOKEN
+client.run(getenv('TOKEN'))
