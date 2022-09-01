@@ -5,9 +5,8 @@ import datetime
 from os import getenv
 from discord import app_commands
 
-with open("errors.json","r") as e:
-  errors = json.load(e)
-
+with open("frozen.json","r") as f:
+  ff = json.load(f)
   
 class MyClient(discord.Client):
     def __init__(self, *, intents: discord.Intents):
@@ -27,8 +26,6 @@ async def on_ready():
   print('{0.user} is working!'.format(client))
   print('---------------------------------------')
   await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name='Frozen Freebies'))
-  
-  
   
 @client.tree.command(name = 'error_name', description = 'Search the error by its name to get a possible solution')
 async def error_name(interaction: discord.Interaction, error: str):
@@ -184,12 +181,13 @@ async def version(interaction: discord.Interaction):
   with open("version.json","r") as v:
     version = json.load(v)
 
-    windows_os = version["version"][0]["os"]
-    windows_version = version["version"][0]["version"]
-    windows_link = version["version"][0]["link"]
-    macos_os = version["version"][1]["os"]
-    macos_version = version["version"][1]["version"]
-    macos_link = version["version"][1]["link"]
+    version = ff['version']
+    windows_os = version[0]["os"]
+    windows_version = version[0]["os"]
+    windows_link = version[0]["link"]
+    macos_os = ff["version"][1]["os"]
+    macos_version = ff["version"][1]["version"]
+    macos_link = ff["version"][1]["link"]
 
     emb = discord.Embed(title='Frozen Freebies Version',color=discord.Color.purple())
     emb.set_author(name='Frozen Freebies',icon_url='https://pbs.twimg.com/profile_images/1542644644982423553/huthtNbr_400x400.png')
