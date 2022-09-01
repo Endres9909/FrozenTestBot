@@ -22,8 +22,10 @@ client = MyClient(intents=intents)
 
 @client.event
 async def on_ready():
-    print(f'Logged in as {client.user}')
-    print('------------------------------')
+  print('---------------------------------------')
+  print('{0.user} is working!'.format(client))
+  print('---------------------------------------')
+  await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name='Amazon Discounts'))
   
   
   
