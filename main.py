@@ -5,8 +5,10 @@ import datetime
 from os import getenv
 from discord import app_commands
 
-with open("errors.json","r") as f:
-  errors = json.load(f)
+with open("errors.json","r") as e:
+  errors = json.load(e)
+with open("version.json","r") as v:
+  version = json.load(v)
   
 class MyClient(discord.Client):
     def __init__(self, *, intents: discord.Intents):
@@ -174,6 +176,33 @@ async def partners(interaction: discord.Interaction):
   emb.add_field(name='\u200b',value='\u200b',inline=True)
   emb.add_field(name='Official Twitter Account',value='[Twitter](https://twitter.com/FreebiesFrozen)',inline=False)
   emb.set_footer(text='Frozen Freebies Partners')
+  await interaction.response.send_message(embed=emb)
+  
+    # <--------------------------------------------------------------------------------------------->
+  
+  @client.tree.command(name = 'version', description = 'Display the latest software version and its respect OS version')
+async def version(interaction: discord.Interaction):
+
+  windows_os = version["version"][0]["os"]
+  windows_version = version["version"][0]["version"]
+  windows_link = version["version"][0]["link"]
+  macos_os = version["version"][1]["os"]
+  macos_version = version["version"][1]["version"]
+  macos_link = version["version"][1]["link"]
+  
+  emb = discord.Embed(title='Frozen Freebies Version',color=discord.Color.purple())
+  emb.set_author(name='Frozen Freebies',icon_url='https://pbs.twimg.com/profile_images/1542644644982423553/huthtNbr_400x400.png')
+  emb.timestamp = datetime.datetime.now()
+  emb.add_field(name='__Windows__',value='\u200b',inline=False)
+  emb.add_field(name='OS',value=windows_os,inline=True)
+  emb.add_field(name='Version',value=windows_version,inline=True)
+  emb.add_field(name='Link',value=windows_link,inline=True)
+  emb.add_field(name='__macOS__',value='\u200b',inline=False)
+  emb.add_field(name='OS',value=macos_os,inline=True)
+  emb.add_field(name='Version',value=macos_version,inline=True)
+  emb.add_field(name='Link',value=macos_link,inline=True)
+  emb.add_field(name='Official Twitter Account',value='[Twitter](https://twitter.com/FreebiesFrozen)',inline=False)
+  emb.set_footer(text='Frozen Freebies Version')
   await interaction.response.send_message(embed=emb)
   
 client.run(getenv('TOKEN'))
