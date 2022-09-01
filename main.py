@@ -178,8 +178,6 @@ async def partners(interaction: discord.Interaction):
   
 @client.tree.command(name = 'version', description = 'Display the latest software version and its respect OS version')
 async def version(interaction: discord.Interaction):
-  with open("version.json","r") as v:
-    version = json.load(v)
 
     version = ff['version']
     windows_os = version[0]["os"]
