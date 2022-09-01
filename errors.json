@@ -163,4 +163,15 @@
       "color": "discord.Color.red()"
     }
   ] 
+  "version":[
+    {
+      "os": "Windows",
+      "version": "v2.0.42",
+      "link": "https://github.com/Frozen-Software-LLC/FrozenReleases2.0/releases/tag/v2.0.42",
+    },
+    {
+      "os": "macOS",
+      "version": "v2.0.26",
+      "link": "https://github.com/Frozen-Software-LLC/FrozenReleases2.0/releases/tag/v2.0.26",
+    }
 }
