@@ -180,7 +180,7 @@ async def partners(interaction: discord.Interaction):
   
     # <--------------------------------------------------------------------------------------------->
   
-  @client.tree.command(name = 'version', description = 'Display the latest software version and its respect OS version')
+@client.tree.command(name = 'version', description = 'Display the latest software version and its respect OS version')
 async def version(interaction: discord.Interaction):
 
   windows_os = version["version"][0]["os"]
