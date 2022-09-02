@@ -118,7 +118,7 @@ async def info(interaction: discord.Interaction, user: discord.Member):
   
 @client.tree.command(name = 'guide', description = 'Frozen Freebies Documentation')
 async def guide(interaction: discord.Interaction):
-  emb = discord.Embed(title='Frozen Freebies Documentation',description="Please be sure to read this information upon entering the server, and refer back to it before opening a <#986830467024162827>",color=discord.Color.purple())
+  emb = discord.Embed(title='Frozen Documentation',description="Please be sure to read this information upon entering the server, and refer back to it before opening a <#986830467024162827>",color=discord.Color.purple())
   emb.set_author(name='Frozen Freebies',icon_url='https://pbs.twimg.com/profile_images/1542644644982423553/huthtNbr_400x400.png')
   emb.timestamp = datetime.datetime.now()
   emb.add_field(name='Documentation covering the usage of Frozen Freebies software',value='[General Guide](https://frozen-freebies.gitbook.io/frozen-freebies-2.0-guide/)',inline=False)
@@ -128,8 +128,6 @@ async def guide(interaction: discord.Interaction):
   emb.add_field(name='Announcements', value='<#939644999644106842>', inline=True)
   emb.add_field(name='Bot Download', value='<#939648451145236483>', inline=True)
   emb.add_field(name='FAQ', value='<#941424987590516827>', inline=True)
-  emb.add_field(name='\u200b',value='\u200b',inline=True)
-  emb.add_field(name='Twitter',value='[Twitter](https://twitter.com/FreebiesFrozen)',inline=False)
   emb.set_footer(text='Frozen Freebies Guide')
   await interaction.response.send_message(embed=emb)
 
@@ -137,16 +135,15 @@ async def guide(interaction: discord.Interaction):
   
 @client.tree.command(name = 'help', description = 'Frozen Freebies commands and how to use them')
 async def help(interaction: discord.Interaction):  
-  emb = discord.Embed(title='Frozen Freebies Help',description="Here is a list of the most useful Frozen Freebies commands and how to use them‍",color=discord.Color.purple())
+  emb = discord.Embed(title='Frozen Help',description="Here is a list of the most useful Frozen Freebies commands and how to use them‍",color=discord.Color.purple())
   emb.set_author(name='Frozen Freebies',icon_url='https://pbs.twimg.com/profile_images/1542644644982423553/huthtNbr_400x400.png')
   emb.timestamp = datetime.datetime.now()
   emb.add_field(name='/error_id',value='Search the error by its ID that is display on you webhook, and get a possible solution or what the error means',inline=False)
   emb.add_field(name='/error_name',value='Search the error by its name that is display on you webhook, and get a possible solution or what the error means',inline=False)
   emb.add_field(name='/info',value='Display all user information, including discord name, discord id, status, top role, and when they joined the server',inline=False)
   emb.add_field(name='/guide',value='Display Frozen Freebies Documentation',inline=False)
+  emb.add_field(name='/version',value='Display the latest software version and its respect OS version',inline=False)
   emb.add_field(name='FAQ', value='<#941424987590516827>', inline=False)
-  emb.add_field(name='\u200b',value='\u200b',inline=True)
-  emb.add_field(name='Twitter',value='[Twitter](https://twitter.com/FreebiesFrozen)',inline=False)
   emb.set_footer(text='Frozen Freebies Help')
   await interaction.response.send_message(embed=emb)
 
@@ -154,8 +151,7 @@ async def help(interaction: discord.Interaction):
   
 @client.tree.command(name = 'partners', description = 'Frozen Freebies Partners')
 async def partners(interaction: discord.Interaction):
-               
-  emb = discord.Embed(title='Frozen Freebies Partners',color=discord.Color.purple())
+  emb = discord.Embed(title='Frozen Partners',color=discord.Color.purple())
   emb.set_author(name='Frozen Freebies',icon_url='https://pbs.twimg.com/profile_images/1542644644982423553/huthtNbr_400x400.png')
   emb.timestamp = datetime.datetime.now()
   emb.add_field(name='__Servers__',value='\u200b',inline=False)
@@ -169,8 +165,6 @@ async def partners(interaction: discord.Interaction):
   emb.add_field(name='Profit Proxies',value='<#987093364266643466>',inline=True)
   emb.add_field(name='Stella Proxies',value='<#954204233459200010>',inline=True)
   emb.add_field(name='Unknown Proxies',value='<#1002701641700606043>',inline=True)
-  emb.add_field(name='\u200b',value='\u200b',inline=True)
-  emb.add_field(name='Twitter',value='[Twitter](https://twitter.com/FreebiesFrozen)',inline=False)
   emb.set_footer(text='Frozen Freebies Partners')
   await interaction.response.send_message(embed=emb)
   
@@ -187,17 +181,15 @@ async def version(interaction: discord.Interaction):
     macos_version = ff["version"][1]["version"]
     macos_link = ff["version"][1]["link"]
 
-    emb = discord.Embed(title='Frozen Freebies Version',color=discord.Color.purple())
+    emb = discord.Embed(title='Frozen Version',color=discord.Color.purple())
     emb.set_author(name='Frozen Freebies',icon_url='https://pbs.twimg.com/profile_images/1542644644982423553/huthtNbr_400x400.png')
     emb.timestamp = datetime.datetime.now()
     emb.add_field(name='__OS__',value=windows_os,inline=True)
     emb.add_field(name='__Version__',value=windows_version,inline=True)
     emb.add_field(name='__Link__',value=windows_link,inline=True)
-    emb.add_field(name='\u200b',value='\u200b',inline=False)
     emb.add_field(name='__OS__',value=macos_os,inline=True)
     emb.add_field(name='__Version__',value=macos_version,inline=True)
     emb.add_field(name='__Link__',value=macos_link,inline=True)
-    emb.add_field(name='__Twitter__',value='[Twitter](https://twitter.com/FreebiesFrozen)',inline=False)
     emb.set_footer(text='Frozen Freebies Version')
     await interaction.response.send_message(embed=emb)
   
