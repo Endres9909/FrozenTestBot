@@ -170,8 +170,8 @@ async def partners(interaction: discord.Interaction):
   
     # <--------------------------------------------------------------------------------------------->
   
-@client.tree.command(name = 'version', description = 'Display the latest software version and its respect OS version')
-async def version(interaction: discord.Interaction):
+@client.tree.command(name = 'download', description = 'Display the latest software version and its respect OS version')
+async def download(interaction: discord.Interaction):
 
     version = ff['version']
     windows_os = version[0]["os"]
@@ -181,7 +181,7 @@ async def version(interaction: discord.Interaction):
     macos_version = ff["version"][1]["version"]
     macos_link = ff["version"][1]["link"]
 
-    emb = discord.Embed(title='Frozen Version',color=discord.Color.purple())
+    emb = discord.Embed(title='Frozen Download',color=discord.Color.purple())
     emb.set_author(name='Frozen Freebies',icon_url='https://pbs.twimg.com/profile_images/1542644644982423553/huthtNbr_400x400.png')
     emb.timestamp = datetime.datetime.now()
     emb.add_field(name='__OS__',value=windows_os,inline=True)
@@ -190,7 +190,7 @@ async def version(interaction: discord.Interaction):
     emb.add_field(name='__OS__',value=macos_os,inline=True)
     emb.add_field(name='__Version__',value=macos_version,inline=True)
     emb.add_field(name='__Link__',value=macos_link,inline=True)
-    emb.set_footer(text='Frozen Freebies Version')
+    emb.set_footer(text='Frozen Freebies Download')
     await interaction.response.send_message(embed=emb)
   
 client.run(getenv('TOKEN'))
