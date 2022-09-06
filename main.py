@@ -29,7 +29,7 @@ async def on_ready():
   
 @client.tree.command(name = 'error_name', description = 'Search the error by its name to get a possible solution')
 async def error_name(interaction: discord.Interaction, error: str):
-  for list in errors['list_errors']:
+  for list in ff['list_errors']:
     if str(list['name']).startswith(error):
       
       name = list['name']
@@ -65,7 +65,7 @@ async def error_name(interaction: discord.Interaction, error: str):
 
 @client.tree.command(name = 'error_id', description = 'Search the error by its ID to get a possible solution')
 async def error_id(interaction: discord.Interaction, id: int):
-  for list in errors['list_errors']:
+  for list in ff['list_errors']:
     if list['id'] == id:
       
       name = list['name']
